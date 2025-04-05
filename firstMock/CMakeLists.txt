@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
- cd
+
 # Locate GTest
 # Test
 find_package(GTest REQUIRED)
