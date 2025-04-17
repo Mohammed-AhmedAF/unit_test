@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.27)
 
+project(mockProj VERSION 1.0.0 LANGUAGES CXX)
+
 # Locate GTest
 # Test
 find_package(GTest REQUIRED)
@@ -17,6 +19,8 @@ target_link_libraries(runTests ${GTEST_LIBRARIES}
 GTest::gmock 
 GTest::gmock_main 
 Threads::Threads)
+
+install(TARGETS runTests RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin)
 
 #Register the tests so that it can be run with ctest
 add_test(NAME runTests COMMAND runTests.exe)
